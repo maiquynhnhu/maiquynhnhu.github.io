@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mai Quynh Nhu | Marketing Portfolio</title>
+  <meta name="description" content="Marketing portfolio of Mai Quynh Nhu — Event & Campaign Execution, KOL/KOC Management, Content Production in Ho Chi Minh City, Vietnam." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rose-gold: #C9956C;
+      --rose-gold-light: #e8c4a8;
+      --rose-gold-dark: #a87450;
+      --teal: #1A7D7B;
+      --teal-light: #d4efee;
+      --bg: #fafafa;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-200: #e8e8e8;
+      --gray-400: #9a9a9a;
+      --gray-600: #555555;
+      --dark: #1a1a1a;
+      --font: 'DM Sans', sans-serif;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.14);
+      --radius: 14px;
+      --transition: 0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 64px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      transition: box-shadow var(--transition);
+    }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-logo {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--dark); text-decoration: none; letter-spacing: -0.3px;
+    }
+    .nav-logo span { color: var(--rose-gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--gray-600); text-decoration: none;
+      letter-spacing: 0.02em; transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--rose-gold); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: var(--dark); border-radius: 2px; transition: var(--transition); }
+
+    /* ─── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 120px 6% 80px;
+      background: linear-gradient(135deg, #fff8f5 0%, #f5fafa 50%, #fff8f5 100%);
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,149,108,0.12) 0%, transparent 70%);
+    }
+    #hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,125,123,0.10) 0%, transparent 70%);
+    }
+    .hero-inner {
+      max-width: 780px; text-align: center; position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 18px; margin-bottom: 24px;
+      background: var(--teal-light); color: var(--teal);
+      border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero-inner h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -1.5px; color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .hero-inner h1 span { color: var(--rose-gold); }
+    .hero-role {
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      color: var(--gray-600); font-weight: 400;
+      margin-bottom: 20px; letter-spacing: 0.01em;
+    }
+    .hero-tagline {
+      font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+      font-weight: 600; color: var(--dark);
+      margin-bottom: 40px; letter-spacing: -0.3px;
+    }
+    .hero-tagline em { color: var(--rose-gold); font-style: normal; }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 999px;
+      font-family: var(--font); font-size: 0.88rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: all var(--transition);
+      border: none;
+    }
+    .btn-primary {
+      background: var(--rose-gold); color: #fff;
+      box-shadow: 0 4px 18px rgba(201,149,108,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--rose-gold-dark);
+      box-shadow: 0 6px 24px rgba(201,149,108,0.45);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent; color: var(--dark);
+      border: 1.5px solid var(--gray-200);
+    }
+    .btn-outline:hover {
+      border-color: var(--rose-gold); color: var(--rose-gold);
+      transform: translateY(-2px);
+    }
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: var(--gray-400); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .hero-scroll i { animation: bounce 1.8s infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    /* ─── SECTION WRAPPER ──────────────────────────────────────── */
+    section { padding: 100px 6%; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--rose-gold); margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 700; letter-spacing: -0.8px;
+      color: var(--dark); margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 0.95rem; color: var(--gray-600);
+      max-width: 520px; margin-bottom: 56px;
+    }
+
+    /* ─── STATS ─────────────────────────────────────────────────── */
+    #stats { background: var(--dark); padding: 80px 6%; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      padding: 40px 28px; text-align: center;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: background var(--transition);
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
+    }
+    .stat-card.visible { opacity: 1; transform: translateY(0); }
+    .stat-card:hover { background: rgba(201,149,108,0.10); }
+    .stat-value {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700; color: var(--rose-gold);
+      line-height: 1; margin-bottom: 10px;
+    }
+    .stat-label {
+      font-size: 0.8rem; color: rgba(255,255,255,0.55);
+      font-weight: 400; letter-spacing: 0.03em;
+    }
+
+    /* ─── EXPERIENCE ────────────────────────────────────────────── */
+    #experience { background: var(--white); }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+    .exp-card {
+      background: var(--bg);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 36px;
+      transition: box-shadow var(--transition), transform var(--transition);
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    }
+    .exp-card.visible { opacity: 1; transform: translateY(0); }
+    .exp-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px) !important; }
+    .exp-header { margin-bottom: 20px; }
+    .exp-company {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rose-gold); margin-bottom: 6px;
+    }
+    .exp-role {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 4px;
+    }
+    .exp-date {
+      font-size: 0.8rem; color: var(--gray-400);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .exp-bullets { list-style: none; margin-top: 18px; }
+    .exp-bullets li {
+      font-size: 0.88rem; color: var(--gray-600);
+      padding: 7px 0; border-bottom: 1px solid var(--gray-200);
+      padding-left: 18px; position: relative;
+    }
+    .exp-bullets li:last-child { border-bottom: none; }
+    .exp-bullets li::before {
+      content: '';
+      position: absolute; left: 0; top: 15px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--rose-gold);
+    }
+
+    /* ─── PROJECTS ──────────────────────────────────────────────── */
+    #projects { background: var(--gray-100); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    }
+    .project-card.visible { opacity: 1; transform: translateY(0); }
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px) !important;
+    }
+    .project-img {
+      position: relative; width: 100%; height: 220px; overflow: hidden;
+    }
+    .project-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-img img { transform: scale(1.06); }
+    .project-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.72) 100%);
+    }
+    .project-img-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 20px;
+    }
+    .project-badge {
+      display: inline-block;
+      background: var(--rose-gold); color: #fff;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .project-img-title {
+      font-size: 1rem; font-weight: 700;
+      color: #fff; line-height: 1.3;
+    }
+    .project-body { padding: 20px; }
+    .project-result {
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--rose-gold); margin-bottom: 8px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .project-desc {
+      font-size: 0.82rem; color: var(--gray-600);
+      line-height: 1.55;
+    }
+
+    /* ─── SKILLS ────────────────────────────────────────────────── */
+    #skills { background: var(--white); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .skill-tile {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-tile.visible { opacity: 1; transform: translateY(0); }
+    .skill-tile:hover {
+      border-color: var(--rose-gold-light);
+      box-shadow: 0 4px 20px rgba(201,149,108,0.14);
+      transform: translateY(-3px) !important;
+    }
+    .skill-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--teal-light); color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; margin-bottom: 16px;
+    }
+    .skill-tile-title {
+      font-size: 0.88rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 12px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 0.72rem; padding: 4px 10px;
+      background: var(--gray-100); color: var(--gray-600);
+      border-radius: 999px; font-weight: 500;
+    }
+
+    /* ─── EDUCATION ─────────────────────────────────────────────── */
+    #education { background: var(--gray-100); }
+    .edu-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 44px 44px;
+      max-width: 700px;
+      border: 1px solid var(--gray-200);
+      display: flex; gap: 32px; align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+    .edu-icon {
+      width: 56px; height: 56px; border-radius: 12px; flex-shrink: 0;
+      background: var(--teal-light); color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .edu-school {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rose-gold); margin-bottom: 6px;
+    }
+    .edu-degree {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 6px; line-height: 1.3;
+    }
+    .edu-year {
+      font-size: 0.82rem; color: var(--gray-400); margin-bottom: 16px;
+    }
+    .edu-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .edu-badge {
+      font-size: 0.75rem; font-weight: 600;
+      padding: 5px 14px; border-radius: 999px;
+    }
+    .edu-badge.primary { background: var(--teal-light); color: var(--teal); }
+    .edu-badge.secondary { background: #fef3ec; color: var(--rose-gold-dark); }
+
+    /* ─── CONTACT ────────────────────────────────────────────────── */
+    #contact {
+      background: var(--dark);
+      padding: 100px 6%;
+    }
+    #contact .section-title { color: #fff; }
+    #contact .section-sub { color: rgba(255,255,255,0.5); max-width: 480px; margin-bottom: 56px; }
+    #contact .section-label { color: var(--rose-gold-light); }
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 60px;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none; color: rgba(255,255,255,0.75);
+      font-size: 0.9rem; transition: color var(--transition);
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+    }
+    .contact-link:hover { color: var(--rose-gold-light); border-color: rgba(201,149,108,0.3); }
+    .contact-link i {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(201,149,108,0.15); color: var(--rose-gold-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 0.75rem; font-weight: 600;
+      color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .form-group input, .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 10px; padding: 13px 16px;
+      color: #fff; font-family: var(--font); font-size: 0.88rem;
+      transition: border-color var(--transition), background var(--transition);
+      outline: none; resize: none;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--rose-gold); background: rgba(255,255,255,0.08);
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+    .btn-send {
+      background: var(--rose-gold); color: #fff;
+      border: none; padding: 14px 32px;
+      border-radius: 999px; font-family: var(--font);
+      font-size: 0.88rem; font-weight: 600;
+      cursor: pointer; align-self: flex-start;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 18px rgba(201,149,108,0.3);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .btn-send:hover {
+      background: var(--rose-gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(201,149,108,0.45);
+    }
+    #form-msg { font-size: 0.82rem; color: #6ee7b7; display: none; margin-top: 4px; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      background: #111; color: rgba(255,255,255,0.35);
+      text-align: center; padding: 28px 6%;
+      font-size: 0.78rem; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer span { color: var(--rose-gold-light); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+      .edu-card { flex-direction: column; padding: 32px; }
+    }
+    @media (max-width: 700px) {
+      nav { padding: 0 5%; }
+      .nav-links { display: none; flex-direction: column; gap: 1.2rem; position: fixed; top: 64px; left: 0; right: 0; background: #fff; padding: 28px 6%; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-md); z-index: 998; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      section { padding: 72px 5%; }
+      .form-row { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 420px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ─── SCROLL REVEAL ──────────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Mai<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#stats">Impact</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">📍 Ho Chi Minh City, Vietnam</div>
+      <h1>Mai <span>Quynh Nhu</span></h1>
+      <p class="hero-role">Marketer &nbsp;·&nbsp; Event &amp; Campaign Execution &nbsp;·&nbsp; Documentation &amp; Stakeholder Management</p>
+      <p class="hero-tagline">I turn campaigns into <em>measurable results.</em></p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View My Work</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-envelope"></i> Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ── IMPACT STATS ── -->
+  <section id="stats">
+    <div class="stats-grid">
+      <div class="stat-card" data-val="2200000" data-suffix="+" data-prefix="" data-short="2.2M+">
+        <div class="stat-value" data-target="2.2M+">2.6M+</div>
+        <div class="stat-label">Total Reach Generated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value counter" data-target="60" data-suffix="+">0</div>
+        <div class="stat-label">Content Pieces / Month</div>
+      </div>
+      <!-- <div class="stat-card">
+        <div class="stat-value counter" data-target="10" data-suffix="+">0</div>
+        <div class="stat-label">KOL/KOC Campaigns Managed</div>
+      </div> -->
+      <div class="stat-card">
+        <div class="stat-value counter" data-target="4" data-suffix="+">0</div>
+        <div class="stat-label">Events Coordinated End-to-End</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value counter" data-target="400" data-suffix="%">0</div>
+        <div class="stat-label">Sponsorship Growth</div>
+      </div>
+      <!-- <div class="stat-card">
+        <div class="stat-value counter" data-target="3600" data-suffix="+">0</div>
+        <div class="stat-label">Competition Contestants</div>
+      </div> -->
+      <div class="stat-card">
+        <div class="stat-value counter" data-target="4000" data-suffix="">~0</div>
+        <div class="stat-label">Event Attendees</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value counter" data-target="13000" data-suffix="+">0</div>
+        <div class="stat-label">Interactions (Store Launch)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience">
+    <p class="section-label reveal">Experience</p>
+    <h2 class="section-title reveal">Where I've Made an Impact</h2>
+    <p class="section-sub reveal">1.5 years of hands-on experience delivering campaigns, events, and brand activations that move the needle.</p>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-company">ACFC Vietnam</div>
+          <div class="exp-role">Marketing Collaborator</div>
+          <div class="exp-date"><i class="fa-regular fa-calendar"></i> Jun 2025 – May 2026</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>4+ major product launch events &amp; store activations executed end-to-end</li>
+          <li>60+ content pieces/month approved by Disney &amp; Netflix brand standards</li>
+          <li>Campaign reach: 400K – 2.2M+ per campaign</li>
+          <li>Full contract lifecycle: Purchase Order and Purchase Request (PO/PR), acceptance reports, payment documentation</li>
+        </ul>
+      </div>
+      <div class="exp-card" style="transition-delay: 0.15s;">
+        <div class="exp-header">
+          <div class="exp-company">SHAT JSC</div>
+          <div class="exp-role">Marketing Assistant Intern</div>
+          <div class="exp-date"><i class="fa-regular fa-calendar"></i> Apr – Jun 2025</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed 10 KOCs on 1.2M VND budget → 150K+ reach with high ROI</li>
+          <li>Secured non-cash KOL partnership (100K+ followers) through negotiation</li>
+          <li>Produced performance reports tracking reach, engagement &amp; ROI per creator</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <p class="section-label reveal">Key Projects</p>
+    <h2 class="section-title reveal">Campaigns That Delivered</h2>
+    <p class="section-sub reveal">Real-world projects spanning brand activations, KOL collaborations, university competitions, and community events.</p>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-img">
+          <!-- <img src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/597945913_1322681636569821_8226094664683955786_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=FM8DXq255dAQ7kNvwFb78H_&_nc_oc=AdqIbeD4gAjfjZamr0KtkHH04PZZTuMhG0S1RacA3C_7LctKllt45nSMyHBTmooHQR9kzUWaiO-l-DECyBIZ67XF&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=Crg6j0QwqJ33RfE8qDP6dg&_nc_ss=7b2a8&oh=00_Af5wyAVF7r2zL98jadGjBWk1HYrAiN0qtUMw2g0lE7Xmfg&oe=69FB78F9" alt="ELLE MAN × OWNDAYS × JUSTATEE" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'"/> -->
+          <img src="./images/justatee.jpg" alt="ELLE MAN × OWNDAYS × JUSTATEE" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'"/>
+          <div class="project-img-overlay"></div>
+          <div class="project-img-content">
+            <div class="project-badge">2.2M+ Reach</div>
+            <div class="project-img-title">ELLE MAN × OWNDAYS × JUSTATEE — The One Collection</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-result"><i class="fa-solid fa-chart-line"></i> 2.2M+ reach · ~8K interactions · 3 brand partners</div>
+          <div class="project-desc">Multi-brand collaboration with ELLE MAN, OWNDAYS &amp; JustaTee — coordinated full campaign assets and KOL execution.</div>
+        </div>
+      </div>
+
+      <!-- Project 2A -->
+      <div class="project-card" style="transition-delay: 0.1s;">
+        <div class="project-img">
+          <img src="./images/Khai-truong-OWNDAYS-Sense-City.jpg" alt="OWNDAYS Store Launches" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80'"/>
+          <div class="project-img-overlay"></div>
+          <div class="project-img-content">
+            <div class="project-badge">400K+ Reaches and 13K+ Interactions</div>
+            <div class="project-img-title">OWNDAYS Store Launch — Pham Van Dong</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-result"><i class="fa-solid fa-chart-line"></i> In collaboration with Miss Vietnam 2022 - Tran Hieu Actor and Tiktoker Xuan Hoa</div>
+          <div class="project-desc">Grand opening activations with A-list KOLs and press coverage on AFamily newspaper.</div>
+        </div>
+      </div>
+      <!-- Project 2B -->
+      <div class="project-card" style="transition-delay: 0.1s;">
+        <div class="project-img">
+          <img src="./images/Khai-truong-Vincom-DongKhoi.webp" alt="OWNDAYS Store Launches" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80'"/>
+          <div class="project-img-overlay"></div>
+          <div class="project-img-content">
+            <!-- <div class="project-badge">13K+ Interactions</div> -->
+            <div class="project-img-title">OWNDAYS Store Launch — Vincom Dong Khoi</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-result"><i class="fa-solid fa-chart-line"></i> In collaboration with Miss International 2024 and The 1st Runner-up of Miss Vietnam 2020</div>
+          <div class="project-desc">Generating massive public buzz by anchoring grand opening activations with celebrity influencers.</div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card" style="transition-delay: 0.2s;">
+        <div class="project-img">
+          <img src="https://scontent.fsgn2-10.fna.fbcdn.net/v/t39.30808-6/603766104_1325674522937199_4182971853803410861_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=59xjDbjs5fUQ7kNvwEi87zm&_nc_oc=Adr8kREetyox3QbyJa4po1hsyN04rWI18FXHbIkhHwsjOzWiJWFS2YL_DwH4nPqWjWwP-_PuziAyN9l66IkF4-up&_nc_zt=23&_nc_ht=scontent.fsgn2-10.fna&_nc_gid=JiYg9oAmmsg2vQCzkNCYlw&_nc_ss=7b2a8&oh=00_Af4GjdLlj1V_1asRKMEPSFwMmHGBrohF9DBZlP4z64Y07g&oe=69FB65D9" alt="OWNDAYS Harry Potter" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80'"/>
+          <div class="project-img-overlay"></div>
+          <div class="project-img-content">
+            <!-- <div class="project-badge">YouTube Collab</div> -->
+            <div class="project-img-title">OWNDAYS × HARRY POTTER Limited Collection</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-result"><i class="fa-brands fa-youtube"></i> An Phuong &amp; Nam To (YouTube influencers) · Full KOL docs managed</div>
+          <div class="project-desc">End-to-end KOL documentation &amp; coordination for the iconic Harry Potter limited-edition eyewear drop.</div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card" style="transition-delay: 0.1s;">
+        <div class="project-img">
+          <img src="https://media.licdn.com/dms/image/v2/D562DAQFOwROZ-sVlVA/profile-treasury-image-shrink_1920_1920/B56Zz5fcseKAAc-/0/1773712298128?e=1778310000&v=beta&t=JAeiqd1cHx_xA5Vnt4kYDRXGHqkMKh0ybwjTpHJ8cnc" alt="Marketing Challengers 2025 RMIT" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80'"/>
+          <div class="project-img-overlay"></div>
+          <div class="project-img-content">
+            <div class="project-badge">Partnership with RMIT Vietnam University</div>
+            <div class="project-img-title">Marketing Challengers 2025 — RMIT University</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-result"><i class="fa-solid fa-trophy"></i> Top 3 National Competition · End-to-end documentation</div>
+          <div class="project-desc">Project Lead for a nationally ranked university marketing competition—driving operational excellence and top-tier brand engagement.</div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card" style="transition-delay: 0.2s;">
+        <div class="project-img">
+          <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/484946479_1038658344948833_4713972732045240894_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_ohc=eWwsnJYF3VYQ7kNvwEZfw8g&_nc_oc=Ado1hYx56x6Jh5ElcRbnW3R8BgQvc77pa6FKHz70JT-ydbSeBvfrrSzZnXH_hMb9i35BBv-JH4JbPEA10fCjf0y-&_nc_zt=23&_nc_ht=scontent.fsgn2-9.fna&_nc_gid=HG6TRbGFSBWzWUiNmeykUw&_nc_ss=7b2a8&oh=00_Af7K-S1T83rZeTOmDdpkXPFYjLFZPQLhTuEXAaRn-u2ciw&oe=69FB4F8F" alt="Marketing Generators Van Lang" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=80'"/>
+          <div class="project-img-overlay"></div>
+          <div class="project-img-content">
+            <div class="project-badge">Event Coordinator</div>
+            <div class="project-img-title">Marketing Generators — Van Lang University</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-result"><i class="fa-solid fa-arrow-trend-up"></i> 100M → 400M VND · 3,600+ contestants · Team of 12 led</div>
+          <div class="project-desc">Spearheaded a 12-member department, driving 4x growth in sponsorship acquisition and elevating event standards through comprehensive content oversight and quality management.</div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card" style="transition-delay: 0.3s;">
+        <div class="project-img">
+          <img src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/512807572_122125135820827656_8122022263700505427_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=2a1932&_nc_ohc=1CVRernlRJ4Q7kNvwEFKCU3&_nc_oc=AdrJ_K4GmL_Pu4WGpZypvEmAcHYPCE4roiaJdHNfgIM9FSWJO5Hb4Efyqbotlqk19sr1lnu-WWE6MBlJIcIOdVXG&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=2V7d8FMn53Uc7ejMJAL79w&_nc_ss=7b2a8&oh=00_Af4C6rZQiixirb2VVaT5iNMpJ2NzgKbfn5LOyG6AqJOGjA&oe=69FB8CFC" alt="50th Anniversary Liberation Event" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80'"/>
+          <div class="project-img-overlay"></div>
+          <div class="project-img-content">
+            <div class="project-badge">Event Execution</div>
+            <div class="project-img-title">50th Anniversary Liberation Event — Mo Duc District</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-result"><i class="fa-solid fa-users"></i> ~4,000 attendees · Full event logistics executed</div>
+          <div class="project-desc">Comprehensive event coordination for a major community celebration marking 50 years of Mo Duc District's liberation.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <p class="section-label reveal">Skills</p>
+    <h2 class="section-title reveal">What I Bring to Your Team</h2>
+    <p class="section-sub reveal">A blend of operational precision, creative execution, and data-driven thinking.</p>
+    <div class="skills-grid">
+      <div class="skill-tile">
+        <div class="skill-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <div class="skill-tile-title">Operations &amp; Docs</div>
+        <div class="skill-tags">
+          <span class="skill-tag">PO / PR</span>
+          <span class="skill-tag">Contracts</span>
+          <span class="skill-tag">Compliance</span>
+          <span class="skill-tag">Reporting</span>
+          <span class="skill-tag">Acceptance Reports</span>
+        </div>
+      </div>
+      <div class="skill-tile" style="transition-delay: 0.1s;">
+        <div class="skill-icon"><i class="fa-solid fa-calendar-star"></i></div>
+        <div class="skill-tile-title">Events &amp; Campaigns</div>
+        <div class="skill-tags">
+          <span class="skill-tag">KOLs / KOCs</span>
+          <span class="skill-tag">POSM / PLV</span>
+          <span class="skill-tag">Media Placement</span>
+          <span class="skill-tag">Activations</span>
+          <span class="skill-tag">Brand QC</span>
+        </div>
+      </div>
+      <div class="skill-tile" style="transition-delay: 0.2s;">
+        <div class="skill-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <div class="skill-tile-title">Data &amp; Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Reach Tracking</span>
+          <span class="skill-tag">Engagement</span>
+          <span class="skill-tag">Excel</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">ROI Analysis</span>
+        </div>
+      </div>
+      <div class="skill-tile" style="transition-delay: 0.3s;">
+        <div class="skill-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <div class="skill-tile-title">Content &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Facebook</span>
+          <span class="skill-tag">Instagram</span>
+          <span class="skill-tag">TikTok</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">CapCut</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="education">
+    <p class="section-label reveal">Education</p>
+    <h2 class="section-title reveal">Academic Foundation</h2>
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div>
+        <div class="edu-school">Van Lang University</div>
+        <div class="edu-degree">Bachelor of Business — Digital Marketing</div>
+        <div class="edu-year">2021 – 2025</div>
+        <div class="edu-badges">
+          <span class="edu-badge primary">Classification: Very Good</span>
+          <span class="edu-badge secondary">IELTS 6.5</span>
+          <span class="edu-badge primary">Digital Marketing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-sub">Open to full-time marketing roles. Drop me a line.</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <a href="mailto:maiquynhnhu850@gmail.com" class="contact-link">
+          <i class="fa-regular fa-envelope"></i>
+          <div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Email</div>
+            maiquynhnhu850@gmail.com
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/quynh-nhu-mai/" target="_blank" class="contact-link">
+          <i class="fa-brands fa-linkedin"></i>
+          <div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">LinkedIn</div>
+            linkedin.com/in/quynh-nhu-mai
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;">Location</div>
+            Ho Chi Minh City, Vietnam
+          </div>
+        </a>
+      </div>
+      <!-- <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" placeholder="Alex Nguyen" required />
+          </div>
+          <div class="form-group">
+            <label for="femail">Your Email</label>
+            <input type="email" id="femail" placeholder="alex@company.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" rows="5" placeholder="Hi Mai, I'd love to discuss a campaign with you..." required></textarea>
+        </div>
+        <button type="submit" class="btn-send"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        <div id="form-msg">✅ Message sent! I'll get back to you soon.</div>
+      </form> -->
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2026 <span>Mai Quynh Nhu</span>. Crafted with care in Ho Chi Minh City 🌿</p>
+  </footer>
+
+  <!-- ── SCRIPTS ── -->
+  <script>
+    // Sticky nav
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    }));
+
+    // Counter animation
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const isLarge = target >= 1000;
+      const duration = 1800;
+      const step = Math.ceil(target / (duration / 16));
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        let display = isLarge ? (current >= 1000 ? (current/1000).toFixed(current >= 10000 ? 0 : 1) + 'K' : current) : current;
+        el.textContent = display + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 16);
+    }
+
+    // Intersection Observer for reveal + counters
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          const counters = entry.target.querySelectorAll ? entry.target.querySelectorAll('.counter') : [];
+          counters.forEach(c => animateCounter(c));
+          if (entry.target.classList.contains('counter')) animateCounter(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal, .stat-card, .exp-card, .project-card, .skill-tile').forEach(el => io.observe(el));
+
+    // Stagger stat cards
+    document.querySelectorAll('.stat-card').forEach((card, i) => {
+      card.style.transitionDelay = (i * 0.07) + 's';
+    });
+
+    // Contact form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('form-msg');
+      msg.style.display = 'block';
+      e.target.reset();
+      setTimeout(() => msg.style.display = 'none', 5000);
+    }
+  </script>
+</body>
+</html>
